@@ -16,7 +16,6 @@ CONFIG_USE_BOOTARGS=y
 CONFIG_BOOTARGS="androidboot.serialno=${serial#} console=ttyS2,115200 androidboot.console=ttyS2 androidboot.hardware=am57xevmboard"
 # CONFIG_USE_BOOTCOMMAND is not set
 CONFIG_SYS_CONSOLE_INFO_QUIET=y
-CONFIG_VERSION_VARIABLE=y
 CONFIG_BOARD_EARLY_INIT_F=y
 CONFIG_SPL=y
 CONFIG_SPL_SYS_MALLOC_SIMPLE=y

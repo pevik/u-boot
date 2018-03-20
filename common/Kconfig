@@ -534,7 +534,11 @@ config DEFAULT_FDT_FILE
 
 config VERSION_VARIABLE
 	bool "add U-Boot environment variable vers"
-	default n
+	default y if ARCH_OMAP2PLUS || ARCH_MX6 || ARCH_AT91 || \
+		     ARCH_BCM283X || ARCH_KEYSTONE || ARCH_VF610 || \
+		     ARCH_EXYNOS || ARCH_MX7 || ARCH_DAVINCI || \
+		     ARCH_MX23 || ARCH_MX28 || ARCH_MX5 || ARCH_RMOBILE || \
+		     ARCH_SOCFPGA
 	help
 	  If this variable is defined, an environment variable
 	  named "ver" is created by U-Boot showing the U-Boot
