@@ -480,4 +480,14 @@ config ENV_SIZE
 
 endif
 
+config ENV_VARS_UBOOT_RUNTIME_CONFIG
+	bool "Add run-time information to the environment"
+	default y if ARCH_OMAP2PLUS || ARCH_MX6 || ARCH_AT91 || \
+		     ARCH_BCM283X || ARCH_KEYSTONE || ARCH_VF610 || \
+		     ARCH_EXYNOS || ARCH_MX7
+	help
+	  Enable this in order to add variables describing certain
+	  run-time determined information about the hardware to the
+	  environment.  These will be named board_name, board_rev.
+
 endmenu
