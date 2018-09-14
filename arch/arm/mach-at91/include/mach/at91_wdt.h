@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 Jean-Christophe PLAGNIOL-VILLARD <plagnioj@jcrosoft.com>
  * Copyright (C) 2007 Andrew Victor
- * Copyright (C) 2007 Atmel Corporation.
+ * Copyright (C) 2018 Microchip Technology Inc.
  *
  * Watchdog Timer (WDT) - System peripherals regsters.
  * Based on AT91SAM9261 datasheet revision D.
@@ -27,15 +27,21 @@ typedef struct at91_wdt {
 
 #endif
 
+/* Watchdog Control Register */
+#define AT91_WDT_CR			0x00
 #define AT91_WDT_CR_WDRSTT		1
 #define AT91_WDT_CR_KEY			0xa5000000	/* KEY Password */
 
-#define AT91_WDT_MR_WDV(x)		(x & 0xfff)
+/* Watchdog Mode Register*/
+#define AT91_WDT_MR			0X04
+#define AT91_WDT_MR_WDV			(0xfff << 0)
+#define		AT91_WDT_MR_SET_WDV(x)		((x) & AT91_WDT_MR_WDV)
 #define AT91_WDT_MR_WDFIEN		0x00001000
 #define AT91_WDT_MR_WDRSTEN		0x00002000
 #define AT91_WDT_MR_WDRPROC		0x00004000
 #define AT91_WDT_MR_WDDIS		0x00008000
-#define AT91_WDT_MR_WDD(x)		((x & 0xfff) << 16)
+#define	AT91_WDT_MR_WDD			(0xfff << 16)
+#define		AT91_WDT_MR_SET_WDD(x)		(((x) << 16) & AT91_WDT_MR_WDD)
 #define AT91_WDT_MR_WDDBGHLT		0x10000000
 #define AT91_WDT_MR_WDIDLEHLT		0x20000000
 

@@ -111,4 +111,11 @@ config XILINX_TB_WATCHDOG
 	   Select this to enable Xilinx Axi watchdog timer, which can be found on some
 	   Xilinx Microblaze Platforms.
 
+config WDT_AT91
+	bool "AT91 watchdog timer support"
+	depends on WDT
+	help
+	   Select this to enable Microchip watchdog timer, which can be found on
+	   some AT91 devices.
+
 endmenu
